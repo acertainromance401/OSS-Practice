@@ -6,3 +6,8 @@ test 내용수정
 2차 수정
 1. 다시 push 해보고 GitHub에서 어떤 상태인지 확인 해보기
 2. 확인 후 README.md 수정 시도
+
+3차 수정
+1. GitHub에서 test.txt의 commit을 누르니 2차 수정 내용이 새로운 열에 생성됨
+2. 이전 commit 내용은 바로 보이지 않고 history에 있었음
+3. 앞으로 개선 사항이나 진행 과정은 history로 확인 할 것
