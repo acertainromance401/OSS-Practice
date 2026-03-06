@@ -3,14 +3,13 @@ name: Measure Lead Time
 on:
   pull_request:
     types: [closed]  # PR이 닫힐 때 (머지 시)
-  deployment:  # 배포 이벤트 (실제 배포 시 사용)
 
 jobs:
   measure:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0  # 전체 히스토리 가져오기
 
@@ -24,14 +23,9 @@ jobs:
             LEAD_TIME=$((MERGE_TIME - COMMIT_TIME))
             echo "Lead Time: $LEAD_TIME seconds" >> lead_time_log.txt
           fi
-          
-          # 배포 이벤트 시 (실제 배포 시간 - 커밋 시간)
-          # 추가 로직 필요 (예: 배포 스크립트에서 타임스탬프 기록)
 
       - name: Upload log
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lead-time-log
           path: lead_time_log.txt
-
-          #커밋
