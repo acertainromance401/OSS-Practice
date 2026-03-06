@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0  # 전체 히스토리 가져오기
 
@@ -29,7 +29,7 @@ jobs:
           # 추가 로직 필요 (예: 배포 스크립트에서 타임스탬프 기록)
 
       - name: Upload log
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lead-time-log
           path: lead_time_log.txt
